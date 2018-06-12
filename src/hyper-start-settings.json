@@ -1,0 +1,16 @@
+{
+  "shells": {
+    "cmd": {
+      "name": "cmd",
+      "shell": "C:\\Windows\\System32\\cmd.exe",
+      "shellArgs": [],
+      "env": []
+    },
+    "example": {
+      "name": "WSL",
+      "shell": "C:\\Windows\\System32\\wsl.exe",
+      "shellArgs": ["~"],
+      "env": []
+    }
+  }
+}
