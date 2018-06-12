@@ -2,10 +2,37 @@
   "name": "hyper-start",
   "version": "0.1.0",
   "description": "Configurable shell launcher for hyper.",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "parcel build index.js"
   },
+  "keywords": [
+    "hyper.app",
+    "hyper",
+    "hyperterm",
+    "plugin",
+    "shell"
+  ],
+  "main": "index.js",
+  "license": "MIT",
   "author": "jordandrako",
-  "license": "MIT"
+  "homepage": "https://github.com/jordandrako/hyper-start#readme",
+  "bugs": {
+    "url": "https://github.com/jordandrako/hyper-start/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jordandrako/hyper-start.git"
+  },
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "eslint-config-prettier": "^2.6.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.2.0",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "parcel-bundler": "^1.8.1",
+    "prettier": "^1.7.4"
+  }
 }
