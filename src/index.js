@@ -1,5 +1,6 @@
 import {merge} from 'lodash';
 import dm from './decorateMenu';
+import getShells from './utils/getShells';
 
 const defaultConfig = {
   hotkeys: {
@@ -9,28 +10,12 @@ const defaultConfig = {
 };
 
 let config = defaultConfig;
-let mainShell = {};
 
 export const decorateConfig = mainConfig => {
-  const {shell, shellArgs, env} = mainConfig;
-  mainShell = {
-    default: {
-      name: 'Default Shell',
-      shell,
-      shellArgs,
-      env
-    }
-  };
-  config.shells = mainShell;
-
   if (mainConfig.hyperStart) {
     config = merge(mainConfig.hyperStart, JSON.parse(JSON.stringify(defaultConfig)));
-    config.shells = mainShell;
-
-    if (mainConfig.hyperStart.shells) {
-      config.shells = merge(mainShell, mainConfig.hyperStart.shells);
-    }
   }
+  config.shells = getShells(mainConfig);
   return mainConfig;
 };
 
