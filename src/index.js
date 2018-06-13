@@ -12,17 +12,15 @@ let config = defaultConfig;
 let mainShell = {};
 
 export const decorateConfig = mainConfig => {
-  if (mainConfig.shell) {
-    const {shell, shellArgs, env} = mainConfig;
-    mainShell = {
-      default: {
-        name: 'Default Shell',
-        shell,
-        shellArgs,
-        env
-      }
-    };
-  }
+  const {shell, shellArgs, env} = mainConfig;
+  mainShell = {
+    default: {
+      name: 'Default Shell',
+      shell,
+      shellArgs,
+      env
+    }
+  };
 
   if (mainConfig.hyperStart) {
     config = merge(mainConfig.hyperStart, JSON.parse(JSON.stringify(defaultConfig)));
