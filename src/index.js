@@ -21,10 +21,10 @@ export const decorateConfig = mainConfig => {
       env
     }
   };
+  config.shells = mainShell;
 
   if (mainConfig.hyperStart) {
     config = merge(mainConfig.hyperStart, JSON.parse(JSON.stringify(defaultConfig)));
-
     config.shells = mainShell;
 
     if (mainConfig.hyperStart.shells) {
