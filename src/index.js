@@ -4,7 +4,8 @@ import dm from './decorateMenu';
 const defaultConfig = {
   hotkeys: {
     shellPicker: 'ctrl+alt+t'
-  }
+  },
+  askEveryTime: false
 };
 
 let config = defaultConfig;
