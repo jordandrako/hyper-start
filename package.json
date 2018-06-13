@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Configurable shell launcher for hyper.",
   "scripts": {
-    "build": "parcel build index.js"
+    "build": "parcel build src/index.js"
   },
   "keywords": [
     "hyper.app",
@@ -12,7 +12,7 @@
     "plugin",
     "shell"
   ],
-  "main": "index.js",
+  "main": "dist/index.js",
   "license": "MIT",
   "author": "jordandrako",
   "homepage": "https://github.com/jordandrako/hyper-start#readme",
