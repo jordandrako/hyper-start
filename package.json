@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "Configurable shell launcher for hyper.",
   "scripts": {
-    "build": "parcel build src/index.js"
+    "prebuild": "rimraf ./dist",
+    "build": "babel ./src --out-dir ./dist --source-maps --copy-files"
   },
   "keywords": [
     "hyper.app",
@@ -24,10 +25,32 @@
     "url": "https://github.com/jordandrako/hyper-start.git"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
     "parcel-bundler": "^1.8.1",
     "prettier": "^1.7.4"
   },
   "dependencies": {
-    "lodash": "^4.17.10"
+    "babel-runtime": "^6.26.0",
+    "lodash": "^4.17.10",
+    "rimraf": "^2.6.2"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": 6
+          }
+        }
+      ],
+      "stage-0"
+    ],
+    "plugins": [
+      "transform-runtime"
+    ]
   }
 }

@@ -31,4 +31,4 @@ export const middleware = () => next => action => {
   return next(action);
 };
 
-export const decorateMenu = menu => dm(open, menu);
+export const decorateMenu = menu => dm(menu, config.shells);

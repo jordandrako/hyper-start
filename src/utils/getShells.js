@@ -1,20 +1,18 @@
-import {merge} from 'lodash';
-
 const getShells = config => {
   const {shell, shellArgs, env, hyperStart} = config;
-  const mainShell = {
-    default: {
+  const mainShell = [
+    {
       name: 'Default Shell',
       shell: shell ? shell : '',
       shellArgs: shellArgs ? shellArgs : '',
       env: env ? env : ''
     }
-  };
-  let otherShells = {};
+  ];
+  let otherShells = [];
   if (hyperStart && hyperStart.shells) {
     otherShells = hyperStart.shells;
   }
-  const shells = merge(mainShell, otherShells);
+  const shells = mainShell.concat(otherShells);
   return shells;
 };
 
